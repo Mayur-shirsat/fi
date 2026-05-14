@@ -3,322 +3,254 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Faizan Irfan — F.C.C.M. | Medical Professional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <title>Fayzan Irfan, F.C.C.M. — MD · Researcher · Founder</title>
+  <meta name="description" content="Fayzan Irfan, F.C.C.M. (London, UK) — MD Candidate, Medical Researcher, and Founding COO of Aurea DD."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- ══════════════ NAVIGATION ══════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#hero">
+        <span class="nav__logo-name">Fayzan Irfan</span>
+        <span class="nav__logo-suffix">F.C.C.M.</span>
+      </a>
 
-  <nav class="side-nav" id="sideNav">
-    <a class="side-nav__dot active" data-section="hero"       href="#hero"       title="Home"></a>
-    <a class="side-nav__dot"       data-section="about"      href="#about"      title="About"></a>
-    <a class="side-nav__dot"       data-section="experience" href="#experience" title="Experience"></a>
-    <a class="side-nav__dot"       data-section="research"   href="#research"   title="Research"></a>
-    <a class="side-nav__dot"       data-section="honors"     href="#honors"     title="Honors"></a>
-    <a class="side-nav__dot"       data-section="contact"    href="#contact"    title="Contact"></a>
-  </nav>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about"      class="nav__link">About</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#research"   class="nav__link">Research</a>
+        <a href="#gallery"    class="nav__link">Gallery</a>
+        <a href="#contact"    class="nav__link">Contact</a>
+      </nav>
 
-  <!-- ══════════════════════ HERO ══════════════════════ -->
+      <div class="nav__right">
+        <a href="https://www.linkedin.com/in/dr-fayzan-irfan/" target="_blank" class="nav__linkedin" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+        <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════ HERO ══════════════ -->
   <section class="hero" id="hero">
-    <div class="hero__pattern"></div>
-    <div class="hero__vignette"></div>
 
-    <div class="hero__ecg" aria-hidden="true">
-      <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="0,40 80,40 120,40 140,10 160,70 180,10 200,40 220,40 300,40 340,40 360,15 380,65 400,15 420,40 440,40 560,40 600,40 620,20 640,60 660,20 680,40 700,40 820,40 860,40 880,15 900,65 920,15 940,40 960,40 1200,40"
-          fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+    <!-- Full-bleed B&W photo with cinematic blend -->
+    <div class="hero__bg" aria-hidden="true">
+      <img
+        src="images/hero.jpeg"
+        alt=""
+        id="heroBgImg"
+        onerror="document.getElementById('heroBgImg').style.display='none'; document.querySelector('.hero__bg').classList.add('hero__bg--no-img');"
+      />
+      <div class="hero__bg-gradient"></div>
     </div>
 
     <div class="hero__content">
-      <div class="hero__left">
-        <div class="hero__eyebrow">
-          <span class="hero__eyebrow-line"></span>
-          MEDICAL PROFESSIONAL — BISHKEK, KYRGYZSTAN
-        </div>
-        <h1 class="hero__name">
-          <span class="hero__name-line"><span>Faizan</span></span>
-          <span class="hero__name-line hero__name-line--accent"><span>Irfan</span></span>
-        </h1>
-        <div class="hero__credential">F.C.C.M. &nbsp;·&nbsp; MD Candidate</div>
-        <p class="hero__tagline">
-          A globally oriented medical professional pursuing Fellowship in Critical Care Medicine (IAOTH, UK Accredited) and MD at Kyrgyz State Medical Academy — combining clinical precision, medical research, and compassionate patient care.
-        </p>
-        <div class="hero__pills">
-          <span class="hero__pill">Critical Care Medicine</span>
-          <span class="hero__pill">Emergency Medicine</span>
-          <span class="hero__pill">Cardiac Research</span>
-          <span class="hero__pill">Psychiatry</span>
-          <span class="hero__pill">Dermatology</span>
-        </div>
-        <div class="hero__cta-row">
-          <a href="#contact" class="hero__cta-btn">
-            Get in Touch
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="11 5 16 10 11 15"/></svg>
-          </a>
-          <a href="#research" class="hero__cta-ghost">View Research →</a>
-        </div>
-        <div class="hero__stats-row">
-          <div class="hero__stat">
-            <span class="hero__stat-n" data-target="53">0</span>
-            <span class="hero__stat-l">FCCM Modules</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-n" data-target="45">0</span>
-            <span class="hero__stat-l">CPD Points</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-n" data-target="219">0</span>
-            <span class="hero__stat-l">Learning Sessions</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-n" data-target="1">0</span>
-            <span class="hero__stat-l">Grand Prize Won</span>
-          </div>
-        </div>
+      <p class="hero__eyebrow">London, UK</p>
+
+      <h1 class="hero__name">
+        Fayzan Irfan<span class="hero__comma">,</span>
+        <span class="hero__fccm">F.C.C.M.</span>
+      </h1>
+
+      <p class="hero__roles">MD &nbsp;·&nbsp; Researcher &nbsp;·&nbsp; Founder</p>
+
+      <p class="hero__statement">
+        Building at the intersection of medicine,<br class="hero__br"/> research, leadership, and innovation.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#about" class="btn btn--solid">Explore</a>
+        <a href="https://AureaDD.com" target="_blank" rel="noopener" class="btn btn--ghost">
+          Aurea DD
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="11" height="11">
+            <path d="M3 13L13 3M13 3H7M13 3v6"/>
+          </svg>
+        </a>
       </div>
 
-      <div class="hero__right">
-        <div class="hero__photo-frame">
-          <div class="hero__photo-ring hero__photo-ring--1"></div>
-          <div class="hero__photo-ring hero__photo-ring--2"></div>
-          <div class="hero__photo-wrap">
-            <img class="hero__photo" src="hero.jpeg" alt="Dr. Faizan Irfan"
-              onerror="this.style.display='none'; document.querySelector('.hero__photo-initials').style.display='flex';"/>
-            <div class="hero__photo-initials" style="display:none">FI</div>
-          </div>
-          <div class="hero__badge">
-            <div class="hero__badge-dot"></div>
-            <span>Open to Collaborations</span>
-          </div>
-          <div class="hero__frame-cert">F.C.C.M.</div>
-        </div>
+      <div class="hero__strip">
+        <span>MD Candidate · KSMA</span>
+        <span class="hero__strip-dot">·</span>
+        <span>F.C.C.M. · IAOTH, UK</span>
+        <span class="hero__strip-dot">·</span>
+        <span>Founding COO · <a href="https://AureaDD.com" target="_blank" rel="noopener" class="hero__strip-link">Aurea DD</a></span>
       </div>
     </div>
 
-    <div class="hero__scroll">
+    <div class="hero__scroll-hint" aria-hidden="true">
       <div class="hero__scroll-line"></div>
-      <span>SCROLL</span>
     </div>
   </section>
 
-  <!-- ══════════════════════ ABOUT ══════════════════════ -->
+  <!-- ══════════════ ABOUT ══════════════ -->
   <section class="about" id="about">
     <div class="about__inner">
-      <div class="about__left reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>WHO I AM</div>
-        <h2 class="section-heading">Clinician,<br/><em>Researcher &amp;</em><br/>Leader</h2>
-        <div class="about__divider"></div>
-        <p class="about__body">
-          I am a globally oriented medical professional currently pursuing my Fellowship in Critical Care Medicine (F.C.C.M.), an IAOTH UK-accredited program that builds advanced expertise in the management of critically ill and emergency patients. This training has strengthened my proficiency in advanced life support, ventilator management, hemodynamic monitoring, ABG interpretation, electrolyte and acid–base balance, sepsis management, and multi-organ failure. It continues to refine my clinical judgment in high-acuity ICU settings where precision and empathy are vital.
-        </p>
-        <p class="about__body">
-          My academic foundation is shaped by a multicultural background, having been born in the Kingdom of Saudi Arabia, raised in Dubai, and educated following the UK curriculum at The Winchester School. I am currently pursuing my MD at Kyrgyz State Medical Academy (KSMA) in Bishkek, where I integrate evidence-based medicine with global clinical standards.
-        </p>
-        <p class="about__body">
-          Alongside clinical training, I am deeply committed to medical research and its impact on improving patient outcomes. My ongoing narrative review, <em>"Cardiac Amyloidosis in the Modern Era: Pathophysiology, Diagnosis, and Evolving Therapeutic Strategies"</em>, reflects my growing interest in cardiovascular medicine, cardiac imaging, and modern therapeutics.
-        </p>
-        <p class="about__body">
-          My professional interests span Critical Care Medicine, Emergency Medicine, Psychiatry, and Dermatology, with long-term goals that include pursuing PLAB, MRCP (UK), and advanced postgraduate training grounded in clinical excellence and ethical leadership.
-        </p>
 
-        <div class="about__edu">
-          <div class="about__edu-item reveal">
-            <div class="about__edu-dot"></div>
-            <div>
-              <span class="about__edu-degree">MD (Doctor of Medicine) — In Progress</span>
-              <span class="about__edu-uni">Kyrgyz State Medical Academy (KSMA), Bishkek</span>
-              <span class="about__edu-year">Current</span>
-            </div>
-          </div>
-          <div class="about__edu-item reveal">
-            <div class="about__edu-dot"></div>
-            <div>
-              <span class="about__edu-degree">Fellowship in Critical Care Medicine — F.C.C.M.</span>
-              <span class="about__edu-uni">Virtued Academy International | IAOTH, UK Accredited</span>
-              <span class="about__edu-year">Oct 2025 – Present · 45 CPD Points</span>
-            </div>
-          </div>
-          <div class="about__edu-item reveal">
-            <div class="about__edu-dot"></div>
-            <div>
-              <span class="about__edu-degree">UK Curriculum — Secondary &amp; Higher Education</span>
-              <span class="about__edu-uni">The Winchester School, Dubai</span>
-              <span class="about__edu-year">Born in KSA · Raised in Dubai</span>
-            </div>
-          </div>
+      <div class="about__header reveal">
+        <span class="label">About</span>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__left reveal">
+          <h2 class="about__headline">
+            A globally oriented medical professional — clinician, researcher, and founder — working across critical care, cardiovascular medicine, and health innovation.
+          </h2>
         </div>
 
-        <div class="about__certs reveal">
-          <div class="about__cert">🏥 F.C.C.M. — IAOTH UK Accredited | Virtued Academy International</div>
-          <div class="about__cert">🎯 Goal: PLAB &amp; MRCP (UK) — Postgraduate UK Medical Licensure</div>
-          <div class="about__cert">🔬 Research: Cardiac Amyloidosis — Narrative Review (Ongoing)</div>
-          <div class="about__cert">🌍 Multicultural Background: KSA · Dubai · Kyrgyzstan · UK Curriculum</div>
+        <div class="about__right reveal reveal--delay">
+          <p class="body-text">
+            Born in Saudi Arabia, raised in Dubai, and educated under the UK curriculum at The Winchester School, I am currently pursuing my MD at Kyrgyz State Medical Academy (KSMA) in Bishkek alongside a Fellowship in Critical Care Medicine accredited by IAOTH, UK.
+          </p>
+          <p class="body-text">
+            My work spans clinical training, medical research, and institutional leadership — from directing the Medical Research &amp; Publication Society at KSMA to co-founding
+            <a href="https://AureaDD.com" target="_blank" rel="noopener" class="text-link">Aurea DD</a>,
+            a health innovation venture. I am driven by a commitment to evidence-based medicine, rigorous research, and global clinical standards.
+          </p>
+          <p class="body-text">
+            Long-term ambitions include PLAB, MRCP (UK), and advanced postgraduate training grounded in clinical excellence and ethical leadership.
+          </p>
+
+          <div class="about__tags">
+            <span>Critical Care Medicine</span>
+            <span>Cardiovascular Research</span>
+            <span>Emergency Medicine</span>
+            <span>Psychiatry</span>
+            <span>Dermatology</span>
+            <span>PLAB · MRCP (UK)</span>
+          </div>
         </div>
       </div>
 
-      <div class="about__right reveal reveal--right">
-        <div class="about__big-num">MD</div>
-        <div class="about__cards">
-          <div class="about__card">
-            <span class="about__card-icon">🫀</span>
-            <span class="about__card-title">Critical Care Medicine</span>
-            <span class="about__card-desc">Advanced Life Support, Ventilator Management, Hemodynamic Monitoring, Sepsis, ARDS, Multi-organ Failure</span>
+      <!-- Education timeline -->
+      <div class="edu reveal">
+        <div class="edu__item">
+          <span class="edu__year">Current</span>
+          <div class="edu__body">
+            <span class="edu__title">MD — Doctor of Medicine</span>
+            <span class="edu__place">Kyrgyz State Medical Academy (KSMA), Bishkek</span>
           </div>
-          <div class="about__card">
-            <span class="about__card-icon">🔬</span>
-            <span class="about__card-title">Medical Research</span>
-            <span class="about__card-desc">Cardiac Amyloidosis, Cardiovascular Imaging, Translational Research, Evidence-Based Medicine, Academic Publishing</span>
+        </div>
+        <div class="edu__item">
+          <span class="edu__year">2025–</span>
+          <div class="edu__body">
+            <span class="edu__title">Fellowship in Critical Care Medicine, F.C.C.M.</span>
+            <span class="edu__place">Virtued Academy International · IAOTH, UK Accredited · 45 CPD Points</span>
           </div>
-          <div class="about__card">
-            <span class="about__card-icon">🧠</span>
-            <span class="about__card-title">Clinical Interests</span>
-            <span class="about__card-desc">Emergency Medicine, Psychiatry, Dermatology, ABG Interpretation, Electrolyte &amp; Acid–Base Balance</span>
-          </div>
-          <div class="about__card">
-            <span class="about__card-icon">🎓</span>
-            <span class="about__card-title">Academic Leadership</span>
-            <span class="about__card-desc">Founding Director-General MRPS-KSMA, Executive Head Student Council, International Olympiad Grand Prize</span>
+        </div>
+        <div class="edu__item">
+          <span class="edu__year">–2023</span>
+          <div class="edu__body">
+            <span class="edu__title">UK Curriculum — A-Levels &amp; Secondary Education</span>
+            <span class="edu__place">The Winchester School, Dubai</span>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ══════════════════════ EXPERIENCE ══════════════════════ -->
+  <!-- ══════════════ EXPERIENCE ══════════════ -->
   <section class="experience" id="experience">
-    <div class="experience__inner">
-      <div class="experience__header reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>EXPERIENCE &amp; ROLES</div>
-        <h2 class="section-heading">Clinical &amp;<br/><em>Academic Journey</em></h2>
+    <div class="exp__inner">
+      <div class="exp__header reveal">
+        <span class="label">Experience &amp; Leadership</span>
+        <h2 class="section-heading">Roles &amp; Affiliations</h2>
       </div>
 
-      <div class="timeline">
+      <div class="exp__list">
 
-        <div class="timeline__item reveal">
-          <div class="timeline__left">
-            <div class="timeline__dot timeline__dot--current"></div>
-            <div class="timeline__line"></div>
+        <div class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__period">2025 — Present</span>
           </div>
-          <div class="timeline__body">
-            <div class="timeline__header">
-              <div>
-                <h3 class="timeline__role">Founding Director-General</h3>
-                <span class="timeline__company">Medical Research &amp; Publication Society — KSMA, Bishkek</span>
-              </div>
-              <span class="timeline__period">Nov 2025 — Present</span>
+          <div class="exp__body">
+            <div class="exp__title-row">
+              <h3 class="exp__role">Founding COO</h3>
+              <a href="https://AureaDD.com" target="_blank" rel="noopener" class="exp__org exp__org--link">
+                Aurea DD
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
+              </a>
             </div>
-            <div class="timeline__type">Contract · On-site · Bishkek, Kyrgyzstan</div>
-            <ul class="timeline__bullets">
-              <li>Spearheaded the scientific direction and research strategy for the Medical Research and Publication Society of KSMA.</li>
-              <li>Managed organisational workflow and project execution, ensuring an efficient administrative structure.</li>
-              <li>Represented MRPS-KSMA in academic and external institutional matters, enhancing collaboration and visibility across partner universities.</li>
-            </ul>
-            <div class="timeline__tags">
-              <span>Clinical Research</span><span>Clinical Pharmacology</span><span>Research Strategy</span><span>Academic Leadership</span><span>Publication</span>
-            </div>
+            <p class="exp__desc">Co-founded Aurea DD, a health innovation venture. Leading operations, strategy, and early-stage development at the intersection of medicine and entrepreneurship.</p>
           </div>
         </div>
 
-        <div class="timeline__item reveal">
-          <div class="timeline__left">
-            <div class="timeline__dot timeline__dot--current"></div>
-            <div class="timeline__line"></div>
+        <div class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__period">Nov 2025 — Present</span>
           </div>
-          <div class="timeline__body">
-            <div class="timeline__header">
-              <div>
-                <h3 class="timeline__role">Executive Head — Student Council</h3>
-                <span class="timeline__company">Kyrgyz State Medical Academy (KSMA), Bishkek</span>
-              </div>
-              <span class="timeline__period">Sep 2024 — Present · 1 yr 9 mos</span>
+          <div class="exp__body">
+            <div class="exp__title-row">
+              <h3 class="exp__role">Founding Director-General</h3>
+              <span class="exp__org">MRPS — KSMA</span>
             </div>
-            <div class="timeline__type">On-site · Bishkek, Kyrgyzstan</div>
-            <ul class="timeline__bullets">
-              <li>Led student governance activities, enhancing academic-administrative coordination across the university.</li>
-              <li>Oversaw various student bodies and committees, ensuring effective representation and engagement.</li>
-              <li>Coordinated university-level academic events, fostering a vibrant and collaborative academic community.</li>
-            </ul>
-            <div class="timeline__tags">
-              <span>Team Management</span><span>Event Coordination</span><span>Governance</span><span>Student Representation</span>
-            </div>
+            <p class="exp__desc">Established and lead the Medical Research &amp; Publication Society at Kyrgyz State Medical Academy. Directing scientific strategy, publication pipelines, and inter-university collaboration across Central Asia. <a href="https://instagram.com/official_mrps" target="_blank" class="text-link">@official_mrps</a></p>
           </div>
         </div>
 
-        <div class="timeline__item reveal">
-          <div class="timeline__left">
-            <div class="timeline__dot timeline__dot--current"></div>
-            <div class="timeline__line"></div>
+        <div class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__period">Sep 2024 — Present</span>
           </div>
-          <div class="timeline__body">
-            <div class="timeline__header">
-              <div>
-                <h3 class="timeline__role">Medical Researcher</h3>
-                <span class="timeline__company">American Academy of Research &amp; Academics (AARA)</span>
-              </div>
-              <span class="timeline__period">Oct 2025 — Present · 8 mos</span>
+          <div class="exp__body">
+            <div class="exp__title-row">
+              <h3 class="exp__role">Executive Head — Student Council</h3>
+              <span class="exp__org">KSMA, Bishkek</span>
             </div>
-            <div class="timeline__type">Remote · United States</div>
-            <ul class="timeline__bullets">
-              <li>Conducting original research on <strong>Cardiac Amyloidosis</strong>, focusing on pathophysiological mechanisms and diagnostic advancements.</li>
-              <li>Collaborating with multidisciplinary teams to enhance therapeutic strategies and improve clinical outcomes.</li>
-              <li>Contributing to the understanding of systemic amyloid heart disease through translational research integration.</li>
-            </ul>
-            <div class="timeline__tags">
-              <span>Cardiac Amyloidosis</span><span>Translational Research</span><span>Clinical Pharmacology</span><span>Research Skills</span>
-            </div>
+            <p class="exp__desc">Leading student governance, overseeing committees, and coordinating academic events across the university.</p>
           </div>
         </div>
 
-        <div class="timeline__item reveal">
-          <div class="timeline__left">
-            <div class="timeline__dot timeline__dot--current"></div>
-            <div class="timeline__line"></div>
+        <div class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__period">Oct 2025 — Present</span>
           </div>
-          <div class="timeline__body">
-            <div class="timeline__header">
-              <div>
-                <h3 class="timeline__role">Medical Researcher</h3>
-                <span class="timeline__company">IMG Helping Hands™</span>
-              </div>
-              <span class="timeline__period">Oct 2025 — Present · 8 mos</span>
+          <div class="exp__body">
+            <div class="exp__title-row">
+              <h3 class="exp__role">Medical Researcher</h3>
+              <span class="exp__org">AARA · Remote, USA</span>
             </div>
-            <div class="timeline__type">Remote · United States</div>
-            <ul class="timeline__bullets">
-              <li>Leading an original research project on <strong>Cardiac Amyloidosis</strong> to enhance diagnostic and clinical understanding.</li>
-              <li>Focusing on early detection strategies and cardiac imaging patterns to improve patient outcomes.</li>
-              <li>Collaborating with international medical graduates under IMG Helping Hands to promote evidence-based medical advancements.</li>
-            </ul>
-            <div class="timeline__tags">
-              <span>Cardiac Imaging</span><span>Early Detection</span><span>IMG Network</span><span>Evidence-Based Medicine</span>
-            </div>
+            <p class="exp__desc">Conducting original research on Cardiac Amyloidosis — pathophysiology, diagnostics, and evolving therapeutic strategies — in collaboration with multidisciplinary international teams.</p>
           </div>
         </div>
 
-        <div class="timeline__item reveal">
-          <div class="timeline__left">
-            <div class="timeline__dot timeline__dot--current"></div>
+        <div class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__period">Oct 2025 — Present</span>
           </div>
-          <div class="timeline__body">
-            <div class="timeline__header">
-              <div>
-                <h3 class="timeline__role">Fellowship in Critical Care Medicine — F.C.C.M.</h3>
-                <span class="timeline__company">Virtued Academy International | IAOTH, UK Accredited</span>
-              </div>
-              <span class="timeline__period">Oct 2025 — Present · 8 mos</span>
+          <div class="exp__body">
+            <div class="exp__title-row">
+              <h3 class="exp__role">Medical Researcher</h3>
+              <span class="exp__org">IMG Helping Hands™ · Remote, USA</span>
             </div>
-            <div class="timeline__type">Remote · India · 53 Modules · 219 Sessions · 45 CPD Points</div>
-            <ul class="timeline__bullets">
-              <li>Mastering <strong>advanced life support, ventilator management, ABG &amp; electrolyte interpretation, hemodynamic monitoring</strong>, critical care pharmacology, and ethical leadership in ICU practice.</li>
-              <li>Developing expertise in managing <strong>sepsis, shock, ARDS, and multi-organ failure</strong> with evidence-based protocols.</li>
-              <li>Performing advanced ventilatory and resuscitative procedures; integrating holistic recovery through nutrition and stress management.</li>
-              <li>Globally recognised program emphasising academic rigour, patient-centered care, and leadership in critical care settings.</li>
-            </ul>
-            <div class="timeline__tags">
-              <span>Ventilator Management</span><span>Hemodynamic Monitoring</span><span>Sepsis</span><span>ARDS</span><span>Advanced Life Support</span><span>ICU</span><span>IAOTH UK</span>
+            <p class="exp__desc">Leading research on Cardiac Amyloidosis focusing on early detection and cardiac imaging under the IMG Helping Hands international medical graduates network.</p>
+          </div>
+        </div>
+
+        <div class="exp__item reveal">
+          <div class="exp__meta">
+            <span class="exp__period">Oct 2025 — Present</span>
+          </div>
+          <div class="exp__body">
+            <div class="exp__title-row">
+              <h3 class="exp__role">Fellowship in Critical Care Medicine</h3>
+              <span class="exp__org">Virtued Academy · IAOTH, UK</span>
             </div>
+            <p class="exp__desc">53 modules across 219 sessions covering advanced ICU management, ventilator management, hemodynamic monitoring, sepsis, ARDS, and critical care pharmacology. 45 CPD Points.</p>
           </div>
         </div>
 
@@ -326,243 +258,305 @@
     </div>
   </section>
 
-  <!-- ══════════════════════ RESEARCH ══════════════════════ -->
-  <section class="portfolio" id="research">
-    <div class="portfolio__inner">
-      <div class="portfolio__header reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>RESEARCH &amp; ACADEMIC WORK</div>
-        <h2 class="section-heading">Publications,<br/><em>Research &amp;</em><br/>Contributions</h2>
-        <p class="portfolio__sub">Medical research, academic contributions, and clinical milestones that define my commitment to advancing medicine.</p>
+  <!-- ══════════════ RESEARCH ══════════════ -->
+  <section class="research" id="research">
+    <div class="research__inner">
+      <div class="research__header reveal">
+        <span class="label">Research</span>
+        <h2 class="section-heading">Academic Work</h2>
       </div>
 
-      <div class="portfolio__grid">
-
-        <div class="port-card port-card--wide reveal">
-          <div class="port-card__num">01</div>
-          <div class="port-card__img" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&auto=format&fit=crop')">
-            <div class="port-card__img-overlay"></div>
-          </div>
-          <div class="port-card__body">
-            <span class="port-card__domain">Narrative Review — Ongoing · 2025</span>
-            <h3 class="port-card__title">Cardiac Amyloidosis in the Modern Era: Pathophysiology, Diagnosis, and Evolving Therapeutic Strategies</h3>
-            <p class="port-card__desc">A comprehensive narrative review examining pathophysiological mechanisms of cardiac amyloidosis, advances in cardiac imaging and biomarkers for early diagnosis, and the rapidly evolving therapeutic landscape including tafamidis and RNA-based therapies. Conducted collaboratively with AARA and IMG Helping Hands across international institutions.</p>
-            <div class="port-card__metrics">
-              <div><span class="port-card__metric-val">2</span><span class="port-card__metric-lbl">Research Partners</span></div>
-              <div><span class="port-card__metric-val">Multi</span><span class="port-card__metric-lbl">Disciplinary Team</span></div>
-              <div><span class="port-card__metric-val">2025</span><span class="port-card__metric-lbl">In Progress</span></div>
-            </div>
-            <div class="port-card__tags"><span>Cardiac Amyloidosis</span><span>Cardiovascular Medicine</span><span>Cardiac Imaging</span><span>Translational Research</span><span>Narrative Review</span></div>
-            <a href="#" class="port-card__link">Research in Progress →</a>
-          </div>
+      <!-- Featured paper -->
+      <div class="research__featured reveal">
+        <div class="research__featured-tag">Featured Research · Ongoing 2025</div>
+        <h3 class="research__featured-title">
+          Cardiac Amyloidosis in the Modern Era: Pathophysiology, Diagnosis, and Evolving Therapeutic Strategies
+        </h3>
+        <p class="research__featured-desc body-text">
+          A narrative review examining the pathophysiological mechanisms of cardiac amyloidosis, advances in cardiac imaging and biomarker-based early diagnosis, and an evolving therapeutic landscape including tafamidis and RNA-based therapies. Conducted in collaboration with AARA and IMG Helping Hands.
+        </p>
+        <div class="research__featured-pills">
+          <span>Narrative Review</span>
+          <span>Cardiovascular Medicine</span>
+          <span>Cardiac Imaging</span>
+          <span>In Progress · 2025</span>
         </div>
-
-        <div class="port-card reveal" style="transition-delay:.08s">
-          <div class="port-card__num">02</div>
-          <div class="port-card__img port-card__img--short" style="background-image:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&auto=format&fit=crop')">
-            <div class="port-card__img-overlay"></div>
-          </div>
-          <div class="port-card__body">
-            <span class="port-card__domain">Fellowship — IAOTH, UK Accredited</span>
-            <h3 class="port-card__title">Fellowship in Critical Care Medicine (F.C.C.M.)</h3>
-            <p class="port-card__desc">53 modules across 219 structured sessions (42+ hours) covering advanced ICU management, mechanical ventilation, hemodynamic monitoring, critical care pharmacology, and ethical leadership. Accredited by IAOTH, UK.</p>
-            <div class="port-card__metrics">
-              <div><span class="port-card__metric-val">53</span><span class="port-card__metric-lbl">Modules</span></div>
-              <div><span class="port-card__metric-val">45</span><span class="port-card__metric-lbl">CPD Points</span></div>
-            </div>
-            <div class="port-card__tags"><span>Critical Care</span><span>ICU</span><span>Ventilation</span><span>IAOTH UK</span></div>
-            <a href="https://www.linkedin.com/company/71099373/" target="_blank" class="port-card__link">View Programme →</a>
-          </div>
-        </div>
-
-        <div class="port-card reveal" style="transition-delay:.14s">
-          <div class="port-card__num">03</div>
-          <div class="port-card__img port-card__img--short" style="background-image:url('https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&auto=format&fit=crop')">
-            <div class="port-card__img-overlay"></div>
-          </div>
-          <div class="port-card__body">
-            <span class="port-card__domain">Institutional Leadership</span>
-            <h3 class="port-card__title">Medical Research &amp; Publication Society — KSMA</h3>
-            <p class="port-card__desc">Founded and lead the institutional research body at KSMA, directing scientific strategy, publication pipelines, and inter-university academic partnerships across Central Asia. Founding Director-General since November 2025.</p>
-            <div class="port-card__tags"><span>Research Direction</span><span>Publication</span><span>Academic Strategy</span><span>KSMA</span></div>
-            <a href="https://www.linkedin.com/school/14623077/" target="_blank" class="port-card__link">View Institution →</a>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Two-column cards -->
+      <div class="research__cards">
+        <div class="research__card reveal">
+          <div class="research__card-tag">Institutional Leadership</div>
+          <h4 class="research__card-title">Medical Research &amp; Publication Society (MRPS)</h4>
+          <p class="research__card-desc body-text">
+            Founded and direct the research body at KSMA — shaping scientific strategy, managing publication pipelines, and building academic partnerships across Central Asia.
+          </p>
+          <a href="https://instagram.com/official_mrps" target="_blank" rel="noopener" class="research__card-link">
+            @official_mrps
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M3 13L13 3M13 3H7M13 3v6"/></svg>
+          </a>
+        </div>
+
+        <div class="research__card reveal">
+          <div class="research__card-tag">Achievement · May 2025</div>
+          <h4 class="research__card-title">Grand Prize — International Medical Olympiad</h4>
+          <p class="research__card-desc body-text">
+            Awarded 1st Place in the International Medical Olympiad "Journey to Natural Sciences" — a globally competitive event with participants from universities across Kyrgyzstan, Kazakhstan, Uzbekistan, and Russia.
+          </p>
+          <span class="research__card-issuer">Issued by KSMA &amp; partner universities</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ══════════════════════ HONORS ══════════════════════ -->
-  <section class="honors" id="honors">
-    <div class="honors__inner">
-      <div class="honors__header reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>HONORS &amp; AWARDS</div>
-        <h2 class="section-heading">Recognised<br/><em>Excellence</em></h2>
-      </div>
-
-      <div class="honors__grid">
-
-        <div class="honor-card honor-card--featured reveal">
-          <div class="honor-card__medal">🥇</div>
-          <div class="honor-card__body">
-            <span class="honor-card__badge">Grand Prize — 1st Place</span>
-            <h3 class="honor-card__title">International Medical Olympiad "Journey to Natural Sciences"</h3>
-            <p class="honor-card__desc">
-              Awarded the Grand Prize (1st Place) in a globally competitive academic Olympiad uniting medical students from leading international universities across Kyrgyzstan, Kazakhstan, Uzbekistan, and Russia. Recognised for outstanding medical knowledge, analytical reasoning, and scientific problem-solving excellence among international peers.
-            </p>
-            <div class="honor-card__meta">
-              <span class="honor-card__issuer">Issued by: International Higher School of Medicine, Kyrgyz State Medical Academy, and collaborating universities from Kazakhstan, Uzbekistan, and Russia</span>
-              <span class="honor-card__date">May 2025</span>
-            </div>
-            <div class="honor-card__tags">
-              <span>Grand Prize</span><span>International</span><span>Medical Science</span><span>KSMA</span><span>Academic Excellence</span>
-            </div>
-            <a href="https://www.linkedin.com/in/dr-fayzan-irfan/overlay/Honor/1132842189/treasury/?profileId=ACoAAGFk55IBsqpBBGJmPgfTRhdTvlFW_hagGio" target="_blank" class="honor-card__link">View Certificate →</a>
-          </div>
-        </div>
-
-        <div class="honor-card reveal" style="transition-delay:.1s">
-          <div class="honor-card__medal">🏛️</div>
-          <div class="honor-card__body">
-            <span class="honor-card__badge">Active Certification</span>
-            <h3 class="honor-card__title">Fellowship in Critical Care Medicine (F.C.C.M.)</h3>
-            <p class="honor-card__desc">IAOTH, UK-accredited internationally recognised fellowship in critical care and emergency medicine. 53 modules, 219 sessions, 45 CPD points. Pursuing since October 2025 through Virtued Academy International.</p>
-            <div class="honor-card__meta">
-              <span class="honor-card__issuer">Issued by: Virtued Academy International | IAOTH, UK</span>
-              <span class="honor-card__date">Oct 2025 — Present</span>
-            </div>
-            <div class="honor-card__tags"><span>IAOTH UK</span><span>Critical Care</span><span>Fellowship</span></div>
-          </div>
-        </div>
-
-        <div class="honor-card reveal" style="transition-delay:.2s">
-          <div class="honor-card__medal">🎯</div>
-          <div class="honor-card__body">
-            <span class="honor-card__badge">Future Goals</span>
-            <h3 class="honor-card__title">PLAB &amp; MRCP (UK) — Postgraduate Medical Licensure</h3>
-            <p class="honor-card__desc">Actively preparing for PLAB (Professional and Linguistic Assessments Board) and MRCP (UK) examinations — the gateway to advanced postgraduate medical training in the United Kingdom grounded in clinical excellence and ethical leadership.</p>
-            <div class="honor-card__meta">
-              <span class="honor-card__issuer">Target: General Medical Council (GMC) &amp; Royal Colleges, UK</span>
-              <span class="honor-card__date">Upcoming</span>
-            </div>
-            <div class="honor-card__tags"><span>PLAB</span><span>MRCP</span><span>GMC</span><span>UK Medicine</span></div>
-          </div>
-        </div>
-
-      </div>
+  <!-- ══════════════ GALLERY ══════════════ -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__header reveal">
+      <span class="label" style="padding-left: var(--pad);">Gallery &amp; Media</span>
+      <h2 class="section-heading" style="padding-left: var(--pad);">Featured Moments</h2>
     </div>
+
+    <div class="gallery__carousel-wrap">
+      <div class="gallery__track" id="galleryTrack">
+
+        <article class="gcard">
+          <div class="gcard__img" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&auto=format&fit=crop&q=80')"></div>
+          <div class="gcard__body">
+            <span class="gcard__tag">Research</span>
+            <h4 class="gcard__title">Cardiac Amyloidosis Research Initiative</h4>
+            <p class="gcard__desc">Ongoing narrative review conducted with AARA and IMG Helping Hands.</p>
+            <a href="#research" class="gcard__link">Read more →</a>
+          </div>
+        </article>
+
+        <article class="gcard">
+          <div class="gcard__img" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=700&auto=format&fit=crop&q=80')"></div>
+          <div class="gcard__body">
+            <span class="gcard__tag">Achievement</span>
+            <h4 class="gcard__title">Grand Prize — International Medical Olympiad</h4>
+            <p class="gcard__desc">1st Place at "Journey to Natural Sciences", competing across four countries.</p>
+            <a href="https://www.linkedin.com/in/dr-fayzan-irfan/" target="_blank" class="gcard__link">View on LinkedIn →</a>
+          </div>
+        </article>
+
+        <article class="gcard">
+          <div class="gcard__img" style="background-image:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&auto=format&fit=crop&q=80')"></div>
+          <div class="gcard__body">
+            <span class="gcard__tag">Fellowship</span>
+            <h4 class="gcard__title">F.C.C.M. — Critical Care Fellowship</h4>
+            <p class="gcard__desc">IAOTH UK-accredited Fellowship — 53 modules, 219 sessions, 45 CPD Points.</p>
+            <a href="https://www.linkedin.com/company/71099373/" target="_blank" class="gcard__link">Learn more →</a>
+          </div>
+        </article>
+
+        <article class="gcard">
+          <div class="gcard__img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&auto=format&fit=crop&q=80')"></div>
+          <div class="gcard__body">
+            <span class="gcard__tag">Venture</span>
+            <h4 class="gcard__title">Founding COO — Aurea DD</h4>
+            <p class="gcard__desc">Co-founded Aurea DD at the intersection of medicine and innovation.</p>
+            <a href="https://AureaDD.com" target="_blank" class="gcard__link">Visit Aurea DD →</a>
+          </div>
+        </article>
+
+        <article class="gcard">
+          <div class="gcard__img" style="background-image:url('https://images.unsplash.com/photo-1576671081837-49000212a370?w=700&auto=format&fit=crop&q=80')"></div>
+          <div class="gcard__body">
+            <span class="gcard__tag">Leadership</span>
+            <h4 class="gcard__title">Founding Director-General — MRPS, KSMA</h4>
+            <p class="gcard__desc">Established and lead the Medical Research &amp; Publication Society at KSMA.</p>
+            <a href="https://instagram.com/official_mrps" target="_blank" class="gcard__link">@official_mrps →</a>
+          </div>
+        </article>
+
+        <article class="gcard">
+          <div class="gcard__img" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&auto=format&fit=crop&q=80')"></div>
+          <div class="gcard__body">
+            <span class="gcard__tag">Governance</span>
+            <h4 class="gcard__title">Executive Head — KSMA Student Council</h4>
+            <p class="gcard__desc">Leading student governance and coordination across KSMA since 2024.</p>
+            <a href="https://www.linkedin.com/in/dr-fayzan-irfan/" target="_blank" class="gcard__link">View on LinkedIn →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="gallery__arrow gallery__arrow--prev" id="galleryPrev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="gallery__arrow gallery__arrow--next" id="galleryNext" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+    </div>
+
+    <div class="gallery__dots" id="galleryDots"></div>
   </section>
 
-  <!-- ══════════════════════ CONTACT ══════════════════════ -->
+  <!-- ══════════════ CONTACT ══════════════ -->
   <section class="contact" id="contact">
     <div class="contact__inner">
 
+      <!-- Left col -->
       <div class="contact__left reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>GET IN TOUCH</div>
-        <h2 class="section-heading">Let's Connect<br/>&amp; <em>Collaborate</em></h2>
-        <p class="contact__sub">Whether you're interested in medical research collaboration, academic partnerships, clinical discussions, or professional opportunities — I'd be glad to connect.</p>
+        <span class="label">Contact</span>
+        <h2 class="contact__heading section-heading">Let's connect.</h2>
+        <p class="contact__sub body-text">
+          For research collaborations, professional enquiries, speaking opportunities, or general outreach — reach me directly.
+        </p>
 
-        <div class="contact__cards">
-          <a href="mailto:faizan@fayzanirfan.com" class="contact__card">
-            <div class="contact__card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:contact@fayzanirfan.com" class="contact__email">
+          contact@fayzanirfan.com
+        </a>
+
+        <!-- Social links -->
+        <div class="socials">
+
+          <a href="https://www.linkedin.com/in/dr-fayzan-irfan/" target="_blank" rel="noopener" class="social-row social-row--primary">
+            <div class="social-row__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
             </div>
-            <div>
-              <span class="contact__card-label">EMAIL</span>
-              <span class="contact__card-val">faizan@fayzanirfan.com</span>
+            <div class="social-row__text">
+              <span class="social-row__name">LinkedIn</span>
+              <span class="social-row__handle">Dr. Fayzan Irfan</span>
             </div>
+            <span class="social-row__arrow">↗</span>
           </a>
-          <div class="contact__card">
-            <div class="contact__card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            </div>
-            <div>
-              <span class="contact__card-label">LOCATION</span>
-              <span class="contact__card-val">Bishkek, Kyrgyzstan · Origin: KSA / Dubai</span>
-            </div>
-          </div>
-          <div class="contact__card">
-            <div class="contact__card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-            </div>
-            <div>
-              <span class="contact__card-label">INSTITUTION</span>
-              <span class="contact__card-val">Kyrgyz State Medical Academy (KSMA)</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="contact__social">
-          <span class="contact__social-label">CONNECT</span>
-          <div class="contact__social-links">
-            <a href="https://www.linkedin.com/in/dr-fayzan-irfan/" target="_blank" class="contact__social-btn" title="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://instagram.com/fayzanirfan" target="_blank" class="contact__social-btn" title="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="1.5"/></svg>
-              Instagram
-            </a>
-            <a href="https://orcid.org" target="_blank" class="contact__social-btn" title="ORCID">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.93 7.2h-.96V5.76h.96v1.44zm0 9.6h-.96V8.64h.96v8.16zm3.6 0h-.96v-4.32c0-1.056-.384-1.584-1.152-1.584-.768 0-1.248.576-1.248 1.584v4.32h-.96V8.64h.96v.768c.384-.576.96-.864 1.728-.864 1.248 0 1.632.864 1.632 2.304v6.048z"/></svg>
-              ORCID
-            </a>
-            <a href="Faizan_Irfan_CV.pdf" target="_blank" class="contact__social-btn" title="Download CV">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M6 2h8l6 6v14H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 7V3.5L19.5 9H14z"/></svg>
-              Download CV
-            </a>
-          </div>
+          <a href="https://instagram.com/fayzanirfan" target="_blank" rel="noopener" class="social-row">
+            <div class="social-row__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="social-row__text">
+              <span class="social-row__name">Instagram</span>
+              <span class="social-row__handle">@fayzanirfan</span>
+            </div>
+            <span class="social-row__arrow">↗</span>
+          </a>
+
+          <a href="https://instagram.com/official_mrps" target="_blank" rel="noopener" class="social-row">
+            <div class="social-row__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="social-row__text">
+              <span class="social-row__name">MRPS Instagram</span>
+              <span class="social-row__handle">@official_mrps</span>
+            </div>
+            <span class="social-row__arrow">↗</span>
+          </a>
+
+          <a href="https://AureaDD.com" target="_blank" rel="noopener" class="social-row">
+            <div class="social-row__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
+            </div>
+            <div class="social-row__text">
+              <span class="social-row__name">Aurea DD</span>
+              <span class="social-row__handle">AureaDD.com</span>
+            </div>
+            <span class="social-row__arrow">↗</span>
+          </a>
+
+          <a href="https://orcid.org" target="_blank" rel="noopener" class="social-row">
+            <div class="social-row__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div class="social-row__text">
+              <span class="social-row__name">ORCID</span>
+              <span class="social-row__handle">Research Profile</span>
+            </div>
+            <span class="social-row__arrow">↗</span>
+          </a>
+
         </div>
       </div>
 
-      <div class="contact__right reveal reveal--right">
-        <form class="contact__form" id="contactForm" novalidate>
-          <div class="cf__field">
-            <input type="text" id="fc-name" placeholder=" " required/>
-            <label for="fc-name">Your Name</label>
-            <span class="cf__bar"></span>
-            <span class="cf__error">Please enter your name</span>
+      <!-- Right col — Form -->
+      <div class="contact__right reveal reveal--delay">
+        <form class="cf" id="contactForm" novalidate>
+
+          <div class="cf__row">
+            <div class="cf__field" id="field-name">
+              <label for="fc-name">Name</label>
+              <input type="text" id="fc-name" placeholder="Your full name" required autocomplete="name"/>
+              <span class="cf__err">Please enter your name</span>
+            </div>
+            <div class="cf__field" id="field-email">
+              <label for="fc-email">Email</label>
+              <input type="email" id="fc-email" placeholder="your@email.com" required autocomplete="email"/>
+              <span class="cf__err">Enter a valid email address</span>
+            </div>
           </div>
-          <div class="cf__field">
-            <input type="email" id="fc-email" placeholder=" " required/>
-            <label for="fc-email">Email Address</label>
-            <span class="cf__bar"></span>
-            <span class="cf__error">Enter a valid email address</span>
+
+          <div class="cf__field" id="field-subject">
+            <label for="fc-subject">Subject</label>
+            <input type="text" id="fc-subject" placeholder="What is this regarding?" autocomplete="off"/>
           </div>
-          <div class="cf__field">
-            <input type="text" id="fc-subject" placeholder=" "/>
-            <label for="fc-subject">Subject <span style="opacity:.4">(optional)</span></label>
-            <span class="cf__bar"></span>
+
+          <div class="cf__field cf__field--ta" id="field-msg">
+            <label for="fc-msg">Message</label>
+            <textarea id="fc-msg" rows="6" placeholder="Your message..." required></textarea>
+            <span class="cf__err">Please enter your message</span>
           </div>
-          <div class="cf__field cf__field--textarea">
-            <textarea id="fc-msg" rows="5" placeholder=" " required></textarea>
-            <label for="fc-msg">Your Message</label>
-            <span class="cf__bar"></span>
-            <span class="cf__error">Please enter your message</span>
-          </div>
+
           <button type="submit" class="cf__submit" id="fcSubmit">
             <span class="cf__submit-text">Send Message</span>
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="4" y1="10" x2="16" y2="10"/><polyline points="11 5 16 10 11 15"/></svg>
-            <span class="cf__loader"></span>
+            <span class="cf__loader" aria-hidden="true"></span>
           </button>
-          <div class="cf__success" id="fcSuccess">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4ea87a" stroke-width="2.5" width="28" height="28"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Message sent! I'll be in touch shortly.</span>
+
+          <div class="cf__success" id="fcSuccess" role="alert">
+            ✓ &nbsp;Message received — I'll be in touch shortly.
           </div>
+
         </form>
       </div>
 
     </div>
-
-    <div class="contact__footer">
-      <span>© 2025 Faizan Irfan — F.C.C.M. | MD Candidate, KSMA</span>
-      <div class="contact__footer-links">
-        <a href="https://www.linkedin.com/in/dr-fayzan-irfan/" target="_blank" class="contact__footer-link">LinkedIn</a>
-        <a href="https://instagram.com/fayzanirfan" target="_blank" class="contact__footer-link">Instagram</a>
-        <a href="mailto:faizan@fayzanirfan.com" class="contact__footer-link">Email</a>
-      </div>
-    </div>
   </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__name">Fayzan Irfan, F.C.C.M.</span>
+        <span class="footer__sub">MD · Researcher · Founder · London, UK</span>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="https://AureaDD.com" target="_blank" rel="noopener">Aurea DD ↗</a>
+        <a href="https://www.linkedin.com/in/dr-fayzan-irfan/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://instagram.com/official_mrps" target="_blank" rel="noopener">MRPS</a>
+        <a href="mailto:contact@fayzanirfan.com">contact@fayzanirfan.com</a>
+      </nav>
+    </div>
+
+    <div class="footer__logos">
+      <img src="images/logo (1).jpeg"  alt="Aurea DD logo"  class="footer__logo"
+        onerror="this.style.display='none'"/>
+      <img src="images/logo (2).jpeg"   alt="MRPS logo"      class="footer__logo"
+        onerror="this.style.display='none'"/>
+    </div>
+
+    <p class="footer__copy">© 2025 Fayzan Irfan. All rights reserved.</p>
+  </footer>
 
   <script src="scripts.js"></script>
 </body>
