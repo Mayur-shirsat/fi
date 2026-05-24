@@ -1141,3 +1141,59 @@ button{font-family:inherit;cursor:pointer}
 @media (max-width: 480px) {
   .consult-fee-banner__inr { font-size: 28px; }
 }
+
+/* ── Responsive grid helpers ───────────────────────────
+   Replace inline grid styles in HTML with these classes  */
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.grid-2col--wide {
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Media query additions ────────────────────────────── */
+
+@media(max-width:1024px) {
+  /* Hide nav pages earlier — 8 items overflow before 768px */
+  .nav__pages  { display: none; }
+  .nav__linkedin{ display: none; }
+  .nav__burger  { display: flex; }
+
+  /* Collapse inline grids */
+  .grid-3col    { grid-template-columns: repeat(2, 1fr); }
+  .grid-2col--wide { gap: 36px; }
+}
+
+@media(max-width:768px) {
+  /* Collapse all remaining grids */
+  .grid-3col  { grid-template-columns: 1fr; }
+  .grid-2col  { grid-template-columns: 1fr; }
+  .grid-2col--wide { grid-template-columns: 1fr; gap: 28px; }
+
+  /* Contact section — force single col on mobile (was only at 1024px) */
+  .contact-sec__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Page hero title — smaller minimum on phones */
+  .page-hero__title {
+    font-size: clamp(28px, 9vw, 52px);
+  }
+
+  /* Research MRPS info boxes — full width */
+  .r-card {
+    padding: 24px 20px;
+  }
+}
