@@ -725,3 +725,419 @@ button{font-family:inherit;cursor:pointer}
   .footer__logos{flex-wrap:wrap}
   .page-hero{padding:calc(var(--nav-h) + 48px) var(--pad) 56px}
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CONSULTATION PAGE  —  style-additions.css
+   Add this entire block to the END of style.css
+   (before the closing responsive @media blocks, or after)
+═══════════════════════════════════════════════════════════ */
+
+/* ── Nav: Book Consultation pill ──────────────────────── */
+.nav__page--consult {
+  color: var(--gold) !important;
+  padding: 5px 14px;
+  border: 1px solid var(--gold-border);
+  background: var(--gold-faint);
+  transition: background .22s, color .22s, border-color .22s;
+}
+.nav__page--consult:hover,
+.nav__page--consult.active {
+  background: rgba(200,169,106,0.14);
+  border-color: var(--gold);
+  color: var(--gold-lt) !important;
+}
+.nav__page--consult::after { display: none; }
+
+/* ── Consultation Fee Banner ──────────────────────────── */
+.consult-fee-banner {
+  display: inline-block;
+  max-width: 640px;
+  width: 100%;
+}
+.consult-fee-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px 36px;
+  background: var(--surface);
+  border: 1px solid var(--border-med);
+  position: relative;
+}
+.consult-fee-banner__inner::before,
+.consult-fee-banner__inner::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+.consult-fee-banner__inner::before {
+  top: -1px; left: -1px;
+  border-top: 1px solid var(--gold);
+  border-left: 1px solid var(--gold);
+}
+.consult-fee-banner__inner::after {
+  bottom: -1px; right: -1px;
+  border-bottom: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+}
+.consult-fee-banner__price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.consult-fee-banner__inr {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -.02em;
+}
+.consult-fee-banner__sep {
+  color: var(--text-3);
+  font-size: 18px;
+}
+.consult-fee-banner__usd {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-2);
+}
+.consult-fee-banner__note {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .05em;
+  color: var(--text-3);
+}
+.consult-fee-banner__cta {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ── Services grid ────────────────────────────────────── */
+.consult-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.consult-service {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color .28s, background .28s;
+}
+.consult-service:hover {
+  border-color: var(--gold-border);
+  background: var(--surface-2);
+}
+.consult-service--alert {
+  border-color: rgba(248,113,113,0.18);
+  background: rgba(248,113,113,0.04);
+}
+.consult-service--alert:hover {
+  border-color: rgba(248,113,113,0.35);
+  background: rgba(248,113,113,0.07);
+}
+.consult-service__icon {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.consult-service__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.consult-service__desc {
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+/* ── Flow steps ───────────────────────────────────────── */
+.consult-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.consult-step {
+  flex: 1;
+  min-width: 160px;
+  padding: 32px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color .28s;
+}
+.consult-step:hover { border-color: var(--gold-border); }
+.consult-step__num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--gold);
+  opacity: .35;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.consult-step__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.consult-step__arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  color: var(--text-3);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ── Consultation form ────────────────────────────────── */
+.consult-form-wrap {
+  max-width: 820px;
+}
+.consult-cf {
+  padding: 44px 48px;
+}
+
+/* Select field */
+.consult-select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-med);
+  padding: 8px 0;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color .25s;
+}
+.consult-select:focus { border-bottom-color: var(--gold); }
+.consult-select option {
+  background: var(--ink-2);
+  color: var(--white);
+}
+.consult-select-field {
+  position: relative;
+}
+.consult-select-field::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 14px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid var(--text-3);
+  border-bottom: 1px solid var(--text-3);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* Checkbox */
+.consult-checkbox-field {
+  margin-bottom: 22px;
+}
+.consult-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+.consult-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.consult-checkbox__box {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border-med);
+  background: transparent;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, background .2s;
+  position: relative;
+}
+.consult-checkbox input:checked + .consult-checkbox__box {
+  border-color: var(--gold);
+  background: var(--gold-faint);
+}
+.consult-checkbox input:checked + .consult-checkbox__box::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(45deg) translateY(-1px);
+}
+.consult-checkbox__label {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.consult-checkbox-err {
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: .04em;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Emergency warning block */
+.consult-emergency-warn {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: rgba(248,113,113,0.07);
+  border: 1px solid rgba(248,113,113,0.28);
+  margin-bottom: 22px;
+  animation: fadeUp .35s var(--ease);
+}
+.consult-emergency-warn svg { color: var(--red); flex-shrink: 0; margin-top: 2px; }
+.consult-emergency-warn strong { font-size: 14px; font-weight: 600; color: var(--red); display: block; margin-bottom: 4px; }
+.consult-emergency-warn p { font-size: 12px; font-weight: 300; line-height: 1.65; color: var(--text-2); }
+
+/* Submit button — WhatsApp style */
+.consult-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 22px;
+  margin-top: 8px;
+  background: #25D366;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.consult-submit:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.22);
+}
+.consult-form-note {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-3);
+  letter-spacing: .04em;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ── Testimonials ─────────────────────────────────────── */
+.consult-testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.consult-testi {
+  padding: 36px 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color .28s, background .28s;
+  position: relative;
+}
+.consult-testi::before {
+  content: '\201C';
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  color: var(--gold);
+  opacity: .15;
+  line-height: 1;
+}
+.consult-testi:hover { border-color: var(--gold-border); background: var(--surface-2); }
+.consult-testi__stars {
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.consult-testi__quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 22px;
+}
+.consult-testi__author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.consult-testi__name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.consult-testi__meta {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .06em;
+  color: var(--text-3);
+}
+
+/* ── Legal disclaimer in footer ───────────────────────── */
+.consult-legal-disclaimer {
+  max-width: 1340px;
+  margin: 0 auto 16px;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: .03em;
+  color: var(--text-3);
+  padding: 12px 16px;
+  border: 1px solid rgba(248,113,113,0.14);
+  background: rgba(248,113,113,0.03);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .consult-services { grid-template-columns: repeat(2, 1fr); }
+  .consult-testimonials { grid-template-columns: repeat(2, 1fr); }
+  .consult-cf { padding: 36px 32px; }
+  .consult-fee-banner__inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+@media (max-width: 768px) {
+  .consult-services { grid-template-columns: 1fr; }
+  .consult-testimonials { grid-template-columns: 1fr; }
+  .consult-step { min-width: 100%; flex: 0 0 100%; }
+  .consult-step__arrow { transform: rotate(90deg); padding: 8px 0; align-self: center; width: 100%; justify-content: center; }
+  .consult-flow { flex-direction: column; }
+  .consult-cf { padding: 28px 20px; }
+  .nav__page--consult { padding: 4px 10px; font-size: 11px; }
+}
+@media (max-width: 480px) {
+  .consult-fee-banner__inr { font-size: 28px; }
+}
